@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors - Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Result</h1>
+        <p>You chose: {{ user_choice }}</p>
+        <p>Computer chose: {{ computer_choice }}</p>
+        <p>
+            {% if result == 'win' %}
+                You win!
+            {% elif result == 'lose' %}
+                You lose!
+            {% else %}
+                It's a tie!
+            {% endif %}
+        </p>
+        <p>User Score: {{ user_score }}</p>
+        <p>Computer Score: {{ computer_score }}</p>
+        <form action="{{ url_for('play_again') }}" method="post">
+            <button type="submit">Play Again</button>
+        </form>
+    </div>
+</body>
+</html>

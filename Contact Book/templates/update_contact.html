@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Contact</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Update Contact</h1>
+        <form method="POST" action="{{ url_for('update_contact', id=contact.id) }}">
+            {{ form.hidden_tag() }}
+            <div>
+                {{ form.store_name.label }}<br>
+                {{ form.store_name(size=32) }}
+            </div>
+            <div>
+                {{ form.phone_number.label }}<br>
+                {{ form.phone_number(size=32) }}
+            </div>
+            <div>
+                {{ form.email.label }}<br>
+                {{ form.email(size=32) }}
+            </div>
+            <div>
+                {{ form.address.label }}<br>
+                {{ form.address(size=32) }}
+            </div>
+            <button type="submit">Update Contact</button>
+        </form>
+    </div>
+</body>
+</html>
